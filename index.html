@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>2022 NBA Finals - Score Counter</title>
+        <link rel="icon" type="image/x-icon" href="images/favicon.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+        <link rel="stylesheet" href="index.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="container">
+            <img id="logo" src="images/NBA_Finals_logo.png" alt="logo of the nba finals"/>
+            <button id="tipoffbtn" onclick="startGame()">TIP-OFF!</button>
+            <p id="clock"><span id="minutes">12</span>:<span id="seconds">00</span>:<span id="millis">000</span></p>
+            <div class="scores">
+                <div>
+                    <h3>HOME</h3>
+                    <span id="homescore" class="scoreboard">XX</span>
+                    <div class="buttonrow">
+                        <button class="scorebutton" onclick="homeOne()">+1</button>
+                        <button class="scorebutton" onclick="homeTwo()">+2</button>
+                        <button class="scorebutton" onclick="homeThree()">+3</button>
+                    </div>
+                </div>
+                <div>
+                    <h3>GUEST</h3>
+                    <span id="guestscore" class="scoreboard">XX</span>
+                    <div class="buttonrow">
+                        <button class="scorebutton" onclick="guestOne()">+1</button>
+                        <button class="scorebutton" onclick="guestTwo()">+2</button>
+                        <button class="scorebutton" onclick="guestThree()">+3</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
