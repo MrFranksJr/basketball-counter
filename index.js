@@ -33,7 +33,7 @@ let minutes = 12
 let appendMillis = document.getElementById("millis")
 let appendSeconds = document.getElementById("seconds")
 let appendMinutes = document.getElementById("minutes")
-let interval
+let timerInterval
 
 
 //button click leads into function
@@ -77,7 +77,7 @@ function startGame() {
         homeScoreSpan.textContent = "00"
         homeFoulSpan.textContent = "0"
         guestFoulSpan.textContent = "0"
-        interval = setInterval(startTimer, 10);
+        timerInterval = setInterval(startTimer, 10);
         enableButtons()
         let tipOffButton = document.getElementById("tipoffbtn")
         tipOffButton.disabled = true
@@ -204,4 +204,39 @@ function homeFoul() {
 function guestFoul() {
     guestFouls += 1
     guestFoulSpan.innerText = guestFouls
+}
+
+
+let timeoutSeconds = document.getElementById("timeoutSeconds")
+let clock = document.getElementById("clock")
+let timeoutSecs = 75
+let timeoutInterval
+let popup = document.getElementById("myPopup");
+function startTimeout() {
+    timeoutSecs -= 1
+    timeoutSeconds.innerText = timeoutSecs + "s"
+    if (timeoutSecs == 0) {
+        timerInterval = setInterval(startTimer, 10);
+        clearInterval(timeoutInterval)
+        popup.classList.toggle("show");
+        clock.classList.toggle("inactive")
+        homeFoulSpan.classList.toggle("inactive")
+        guestFoulSpan.classList.toggle("inactive")
+        homeScoreSpan.classList.toggle("inactive")
+        guestScoreSpan.classList.toggle("inactive")
+        timeoutSecs = 75
+        enableButtons()
+    }
+}
+
+function timeOut() {
+    popup.classList.toggle("show");
+    timeoutInterval = setInterval(startTimeout, 1000);
+    clearInterval(timerInterval)
+    clock.classList.toggle("inactive")
+    homeFoulSpan.classList.toggle("inactive")
+    guestFoulSpan.classList.toggle("inactive")
+    homeScoreSpan.classList.toggle("inactive")
+    guestScoreSpan.classList.toggle("inactive")
+    disableButtons()
 }

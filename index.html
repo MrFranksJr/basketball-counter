@@ -15,7 +15,7 @@
         <div class="container">
             <img id="logo" src="images/NBA_Finals_logo.png" alt="logo of the nba finals"/>
             <button id="tipoffbtn" onclick="startGame()">TIP-OFF!</button>
-            <button id="timeoutbtn" class="disabledStart" onclick="timeOut()">TIME-OUT!</button>
+            <button id="timeoutbtn" class="disabledStart popup" onclick="timeOut()">TIME-OUT!<span class="popuptext" id="myPopup">Time-Out: <span id="timeoutSeconds">XXs</span> left</button>
             <div id="periodblock">
                 <h4>PERIOD</h4>
                 <div id="perioddots">
@@ -25,12 +25,12 @@
                     <p class="periodmark"><span id="dot4" class="dot"></span> 4</p>
                 </div>
             </div>
-            <p id="clock"><span id="minutes">12</span>:<span id="seconds">00</span>:<span id="millis">000</span></p>
+            <p id="clock" class="clock"><span id="minutes">12</span>:<span id="seconds">00</span>:<span id="millis">000</span></p>
             <div class="scores">
                 <div>
                     <h3>HOME</h3>
                     <span id="homescore" class="scoreboard">XX</span>
-                    <p class="fouls">FOULS: <span id="homeFouls">X</span></p>
+                    <p class="fouls">FOULS: <span id="homeFouls" class="foulnumber">X</span></p>
                     <div class="buttonrow">
                         <button class="scorebutton disabledStart" onclick="homeOne()">+1</button>
                         <button class="scorebutton disabledStart" onclick="homeTwo()">+2</button>
@@ -41,7 +41,7 @@
                 <div>
                     <h3>GUEST</h3>
                     <span id="guestscore" class="scoreboard">XX</span>
-                    <p class="fouls">FOULS: <span id="guestFouls">X</span></p>
+                    <p class="fouls">FOULS: <span id="guestFouls" class="foulnumber">X</span></p>
                     <div class="buttonrow">
                         <button class="scorebutton disabledStart" onclick="guestOne()">+1</button>
                         <button class="scorebutton disabledStart" onclick="guestTwo()">+2</button>
