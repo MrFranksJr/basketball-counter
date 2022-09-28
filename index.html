@@ -15,25 +15,39 @@
         <div class="container">
             <img id="logo" src="images/NBA_Finals_logo.png" alt="logo of the nba finals"/>
             <button id="tipoffbtn" onclick="startGame()">TIP-OFF!</button>
+            <button id="timeoutbtn" class="disabledStart" onclick="timeOut()">TIME-OUT!</button>
+            <div id="periodblock">
+                <h4>PERIOD</h4>
+                <div id="perioddots">
+                    <p class="periodmark"><span class="dot"></span> 1</p>
+                    <p class="periodmark"><span class="dot"></span> 2</p>
+                    <p class="periodmark"><span class="dot"></span> 3</p>
+                    <p class="periodmark"><span class="dot"></span> 4</p>
+                </div>
+            </div>
             <p id="clock"><span id="minutes">12</span>:<span id="seconds">00</span>:<span id="millis">000</span></p>
             <div class="scores">
                 <div>
                     <h3>HOME</h3>
                     <span id="homescore" class="scoreboard">XX</span>
+                    <p class="fouls">FOULS: <span id="homeFouls">X</span></p>
                     <div class="buttonrow">
-                        <button class="scorebutton" onclick="homeOne()">+1</button>
-                        <button class="scorebutton" onclick="homeTwo()">+2</button>
-                        <button class="scorebutton" onclick="homeThree()">+3</button>
+                        <button class="scorebutton disabledStart" onclick="homeOne()">+1</button>
+                        <button class="scorebutton disabledStart" onclick="homeTwo()">+2</button>
+                        <button class="scorebutton disabledStart" onclick="homeThree()">+3</button>
                     </div>
+                    <button class="foulbtn disabledStart" onclick="homeFoul()">FOUL</button>
                 </div>
                 <div>
                     <h3>GUEST</h3>
                     <span id="guestscore" class="scoreboard">XX</span>
+                    <p class="fouls">FOULS: <span id="guestFouls">X</span></p>
                     <div class="buttonrow">
-                        <button class="scorebutton" onclick="guestOne()">+1</button>
-                        <button class="scorebutton" onclick="guestTwo()">+2</button>
-                        <button class="scorebutton" onclick="guestThree()">+3</button>
+                        <button class="scorebutton disabledStart" onclick="guestOne()">+1</button>
+                        <button class="scorebutton disabledStart" onclick="guestTwo()">+2</button>
+                        <button class="scorebutton disabledStart" onclick="guestThree()">+3</button>
                     </div>
+                    <button class="foulbtn disabledStart" onclick="guestFoul()">FOUL</button>
                 </div>
             </div>
         </div>

@@ -1,33 +1,38 @@
 //disable any button activity
 function disableButtons() {
-    let scoreButtons = document.getElementsByClassName("scorebutton")
-    for(let i = 0; i < scoreButtons.length; i++) {
-    scoreButtons[i].disabled = true;
-}
+    let disabledButtons = document.getElementsByClassName("disabledStart")
+    for(let i = 0; i < disabledButtons.length; i++) {
+        disabledButtons[i].disabled = true;
+    }
 }
 disableButtons()
 
 //enable buttons (called when game starts)
 function enableButtons() {
-    let scoreButtons = document.getElementsByClassName("scorebutton")
-    for(let i = 0; i < scoreButtons.length; i++) {
-    scoreButtons[i].disabled = false;
-}
+    let disabledButtons = document.getElementsByClassName("disabledStart")
+    for(let i = 0; i < disabledButtons.length; i++) {
+        disabledButtons[i].disabled = false;
+    }
 }
 
+
 //make the score work
-let homeScoreSpan = document.getElementById('homescore')
-let guestScoreSpan = document.getElementById('guestscore')
+let homeScoreSpan = document.getElementById("homescore")
+let guestScoreSpan = document.getElementById("guestscore")
 let homeScore = 0
 let guestScore = 0
+let guestFoulSpan = document.getElementById("guestFouls")
+let homeFoulSpan = document.getElementById("homeFouls")
+let homeFouls = 0
+let guestFouls = 0
 
 //make the clock work
 let seconds = 00
 let millis = 000
 let minutes = 12
-let appendMillis = document.getElementById('millis')
-let appendSeconds = document.getElementById('seconds')
-let appendMinutes = document.getElementById('minutes')
+let appendMillis = document.getElementById("millis")
+let appendSeconds = document.getElementById("seconds")
+let appendMinutes = document.getElementById("minutes")
 let interval
 
 //button click leads into function
@@ -69,6 +74,8 @@ function startTimer() {
 function startGame(){
         guestScoreSpan.textContent = "00"
         homeScoreSpan.textContent = "00"
+        homeFoulSpan.textContent = "0"
+        guestFoulSpan.textContent = "0"
         interval = setInterval(startTimer, 10);
         enableButtons()
         let tipOffButton = document.getElementById("tipoffbtn")
@@ -145,7 +152,7 @@ function guestThree() {
 
 
 
-//decide who is leading
+//mark who is leading
 function whosWinning() {
     if (guestScore > homeScore) {
         guestScoreSpan.classList.add("leader")
@@ -159,4 +166,16 @@ function whosWinning() {
         homeScoreSpan.classList.add("leader")
         guestScoreSpan.classList.add("leader")
     }
+}
+
+
+//count fouls
+function homeFoul() {
+    homeFouls += 1
+    homeFoulSpan.innerText = homeFouls
+}
+
+function guestFoul() {
+    guestFouls += 1
+    guestFoulSpan.innerText = guestFouls
 }

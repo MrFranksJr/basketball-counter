@@ -4,10 +4,19 @@
 }
 
 body {
-    margin: 0;
     background-image: url(images/nba-finals-scaled.jpg);
     background-position: center;
     background-size: cover;
+    padding: 0px 20px;
+}
+
+.container {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 600px;
+    background-color: rgba(236, 220, 159, 0.6);
+    border: 5px solid #20478F;
+    border-radius: 10px;
 }
 
 #logo {
@@ -16,22 +25,22 @@ body {
     display: block;
 }
 
-#tipoffbtn {
+#tipoffbtn, #timeoutbtn {
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 600;
     font-size: 20px;
     padding: 10px 20px;
-    margin: 10px 0px;
+    margin: 10px 5px;
     border-radius: 10px;
 }
 
 #clock {
     font-size: 60px;
     font-family: 'CursedTimer', sans-serif;
-    margin: 20px auto;
-    background-color: #3A3A3A;
-    color: #ECDC9F;
-    width: 350px;
+    margin: 10px auto;
+    background-color: #000;
+    color: #B93830;
+    width: 400px;
     height: 100px;
     border-radius: 10px;
     line-height: 105px;
@@ -42,31 +51,35 @@ body {
 
 h3 {
     font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
     margin-block-start: 0px;
-    font-size: 35px;
+    font-size: 40px;
+    color: #20478F;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+h4 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
     color: #20478F;
 }
 
 .scores {
     display: flex;
     justify-content: space-around;
-}
-
-.container {
-    text-align: center;
-    margin: 50px auto;
-    max-width: 600px;
-    background-color: rgba(236, 220, 159, 0.6);
-    border: 5px solid #20478F;
-    border-radius: 10px;
-
+    width: 600px;
+    margin: 0 auto;
 }
 
 .buttonrow {
     display: flex;
     justify-content: space-between;
-    margin: 40px;
-    width: 130px;
+    margin: 30px 0 10px 0;
+    width: 150px;
 }
 
 .scorebutton {
@@ -75,7 +88,7 @@ h3 {
     height: 35px;
     color: #ECDC9F;
     border: solid 1px #20478F;
-    border-radius: 2px;
+    border-radius: 5px;
     background-color: #000;
 }
 
@@ -121,4 +134,80 @@ h3 {
     height: 100px;
     background-color: #000;
     color: #B93830;
+}
+
+.fouls {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+#homefouls, #guestfouls {
+    font-family: 'CursedTimer', sans-serif;
+    color: #B93830;
+    font-size: 23px;
+}
+
+.foulbtn {
+    font-family: 'CursedTimer', sans-serif;
+    width: 150px;
+    height: 50px;
+    color: #ECDC9F;
+    border: solid 1px #20478F;
+    border-radius: 5px;
+    background-color: #000;
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.foulbtn:hover {
+    transition-duration: 0.1s;
+    background-color: #3A3A3A;
+}
+
+.foulbtn:disabled {
+    transition-duration: 0.1s;
+    background-color: #868686;
+    color: #a5a5a5;
+    border: solid 1px #000;
+}
+
+.foulbtn:enabled:active {
+    padding-top: 4px;
+}
+
+#periodblock {
+    width: 440px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 10px 0px;
+}
+
+#perioddots {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    height: 45px;
+}
+
+.periodmark {
+    display: flex;
+    width: 40px;
+    line-height: 15px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: #000;
+    margin-right: 10px;
+}
+
+.reddot {
+    background-color: #B93830;
 }
