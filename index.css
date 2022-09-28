@@ -14,6 +14,7 @@ body {
     text-align: center;
     margin: 20px auto;
     max-width: 600px;
+    min-width: 400px;
     background-color: rgba(236, 220, 159, 0.6);
     border: 5px solid #20478F;
     border-radius: 10px;
@@ -35,16 +36,15 @@ body {
 }
 
 #clock {
-    font-size: 60px;
+    font-size: 70px;
     font-family: 'CursedTimer', sans-serif;
     margin: 10px auto;
     background-color: #000;
     color: #B93830;
-    width: 400px;
+    width: 80%;
     height: 100px;
     border-radius: 10px;
     line-height: 105px;
-    padding: 0px 20px;
     display: flex;
     justify-content: center;
 }
@@ -71,7 +71,6 @@ h4 {
 .scores {
     display: flex;
     justify-content: space-around;
-    width: 600px;
     margin: 0 auto;
 }
 
@@ -177,7 +176,7 @@ h4 {
 }
 
 #periodblock {
-    width: 440px;
+    width: 80%;
     margin: 0 auto;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
