@@ -35,6 +35,7 @@ let appendSeconds = document.getElementById("seconds")
 let appendMinutes = document.getElementById("minutes")
 let interval
 
+
 //button click leads into function
 function startTimer() {
     millis = millis - 10
@@ -71,7 +72,7 @@ function startTimer() {
 }
 
 //buttonclick start game
-function startGame(){
+function startGame() {
         guestScoreSpan.textContent = "00"
         homeScoreSpan.textContent = "00"
         homeFoulSpan.textContent = "0"
@@ -80,9 +81,34 @@ function startGame(){
         enableButtons()
         let tipOffButton = document.getElementById("tipoffbtn")
         tipOffButton.disabled = true
+        whatPeriod()
 }
 
+let period = 0
+function whatPeriod() {
+    let dotOne = document.getElementById("dot1")
+    let dotTwo = document.getElementById("dot2")
+    let dotThree = document.getElementById("dot3")
+    let dotFour = document.getElementById("dot4")
 
+    period += 1
+    
+    if (period == 1) {
+        dotOne.classList.add("reddot")
+    }
+    else if (period == 2) {
+        dotOne.classList.remove("reddot")
+        dotTwo.classList.add("reddot")
+    }
+    else if (period == 3) {
+        dotTwo.classList.remove("reddot")
+        dotThree.classList.add("reddot")
+    }
+    else if (period == 4) {
+        dotThree.classList.remove("reddot")
+        dotFour.classList.add("reddot")
+    }
+}
 
 
 //homescore button functions
