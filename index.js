@@ -207,6 +207,7 @@ function guestFoul() {
 }
 
 
+//make the timouts work
 let timeoutSeconds = document.getElementById("timeoutSeconds")
 let clock = document.getElementById("clock")
 let timeoutSecs = 75
@@ -230,8 +231,9 @@ function startTimeout() {
 }
 
 function timeOut() {
+    timeoutSeconds.innerText = "75s"
     popup.classList.toggle("show");
-    timeoutInterval = setInterval(startTimeout, 1000);
+    timeoutInterval = setInterval(startTimeout, 100);
     clearInterval(timerInterval)
     clock.classList.toggle("inactive")
     homeFoulSpan.classList.toggle("inactive")
@@ -239,4 +241,10 @@ function timeOut() {
     homeScoreSpan.classList.toggle("inactive")
     guestScoreSpan.classList.toggle("inactive")
     disableButtons()
+}
+
+
+//resetting the game.. simple reload
+function resetGame() {
+   document.location.reload(true)
 }
