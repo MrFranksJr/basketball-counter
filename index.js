@@ -17,12 +17,12 @@ function enableButtons() {
 
 
 //make the score work
-let homeScoreSpan = document.getElementById("homescore")
-let guestScoreSpan = document.getElementById("guestscore")
+const homeScoreSpan = document.getElementById("homescore")
+const guestScoreSpan = document.getElementById("guestscore")
 let homeScore = 0
 let guestScore = 0
-let guestFoulSpan = document.getElementById("guestFouls")
-let homeFoulSpan = document.getElementById("homeFouls")
+const guestFoulSpan = document.getElementById("guestFouls")
+const homeFoulSpan = document.getElementById("homeFouls")
 let homeFouls = 0
 let guestFouls = 0
 
@@ -30,9 +30,9 @@ let guestFouls = 0
 let seconds = 00
 let millis = 000
 let minutes = 12
-let appendMillis = document.getElementById("millis")
-let appendSeconds = document.getElementById("seconds")
-let appendMinutes = document.getElementById("minutes")
+const appendMillis = document.getElementById("millis")
+const appendSeconds = document.getElementById("seconds")
+const appendMinutes = document.getElementById("minutes")
 let timerInterval
 
 
@@ -79,17 +79,17 @@ function startGame() {
         guestFoulSpan.textContent = "0"
         timerInterval = setInterval(startTimer, 10);
         enableButtons()
-        let tipOffButton = document.getElementById("tipoffbtn")
+        const tipOffButton = document.getElementById("tipoffbtn")
         tipOffButton.disabled = true
         whatPeriod()
 }
 
 let period = 0
 function whatPeriod() {
-    let dotOne = document.getElementById("dot1")
-    let dotTwo = document.getElementById("dot2")
-    let dotThree = document.getElementById("dot3")
-    let dotFour = document.getElementById("dot4")
+    const dotOne = document.getElementById("dot1")
+    const dotTwo = document.getElementById("dot2")
+    const dotThree = document.getElementById("dot3")
+    const dotFour = document.getElementById("dot4")
 
     period += 1
     
@@ -208,11 +208,11 @@ function guestFoul() {
 
 
 //make the timouts work
-let timeoutSeconds = document.getElementById("timeoutSeconds")
-let clock = document.getElementById("clock")
+const timeoutSeconds = document.getElementById("timeoutSeconds")
+const clock = document.getElementById("clock")
 let timeoutSecs = 75
 let timeoutInterval
-let popup = document.getElementById("myPopup");
+const popup = document.getElementById("myPopup");
 function startTimeout() {
     timeoutSecs -= 1
     timeoutSeconds.innerText = timeoutSecs + "s"
