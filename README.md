@@ -15,3 +15,7 @@ I wanted to take it a tiny bit further:
 * Periods indicators are added
 * Extra counters, for fouls
 * Indicators of who is winning.
+
+<p align="center">
+<img alt="screenshot of the app" src="https://github.com/MrFranksJr/MrFranksJr/blob/main/assets/basketball-counter/app.jpg">
+</p>
